@@ -30,6 +30,8 @@ module.exports.handleCMD = (bot, commandName, message, args) => {
 		require('./xp.js').do(message);
 		return setTimeout(() => xptimestamps.delete(message.author.id), 5000);
 	}
+
+	message.delete()
 	
 	var canrun = false;
 
@@ -65,7 +67,7 @@ module.exports.handleCMD = (bot, commandName, message, args) => {
 		let reply = `You didn't provide any arguments, ${message.author}!`;
 
 		if (command.usage) {
-			reply += `\nUsage: \`${prefix}${command.name} ${command.usage}\``;
+			reply += `\nUsage: \`${process.env.CMDPREFIX}${command.name} ${command.usage}\``;
 		}
 
 		return message.channel.send(reply);
