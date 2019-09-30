@@ -3,7 +3,7 @@
  * See LICENCE file or <https://www.gnu.org/licenses/gpl-3.0.txt>
 */ 
 
-const Discord = ('discord.js');
+var Discord = require('discord.js')
 
 module.exports = {
   name: 'emoji',
