@@ -36,16 +36,16 @@ module.exports.handleCMD = (bot, commandName, message, args) => {
 	if(command.access!==0){
 		switch(command.access){
 			case 1:
-				if(message.author.hasPermission('MANAGE_MESSAGES')) canrun =  true;
+				if(message.member.hasPermission('MANAGE_MESSAGES')) canrun =  true;
 				break;
 			case 2:
-				if(message.author.hasPermission('MANAGE_SERVER')) canrun =  true;
+				if(message.member.hasPermission('MANAGE_SERVER')) canrun =  true;
 				break;
 			case 3:
-				if(message.author.roles.has(process.env.GENIUSID)) canrun =  true;
+				if(message.member.roles.has(process.env.GENIUSID)) canrun =  true;
 				break;
 			case 4:
-				if(message.author.roles.has(process.env.DIAMONDID)) canrun = true
+				if(message.member.roles.has(process.env.DIAMONDID)) canrun = true
 			case 99:
 				if(message.author.id===process.env.OWNERID) canrun =  true;
 				break;
