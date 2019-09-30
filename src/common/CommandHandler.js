@@ -5,6 +5,7 @@
 
 const Discord = require('discord.js');
 const fs = require('fs');
+const xp = require('./xp.js');
 
 module.exports.initCH = (bot, dir) => {
     bot.commands = new Discord.Collection();
@@ -27,7 +28,7 @@ module.exports.handleCMD = (bot, commandName, message, args) => {
 	if (!command){
 		const xptimestamps = bot.cooldowns.get('_xp')
 		if(xptimestamps.has(message.author.id)) return;
-		require('./xp.js').do(message);
+		xp.do(message);
 		return setTimeout(() => xptimestamps.delete(message.author.id), 5000);
 	}
 

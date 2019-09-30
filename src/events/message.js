@@ -4,8 +4,10 @@
 */ 
 
 const { handleCMD } = require(__dirname+'/../common/CommandHandler');
+const tweakSearch = require(__dirname+'/../common/tweakSearch')
 
 module.exports = (bot,message) => {
+    if(message.content.includes('[[') && message.content.includes(']]') && message.content.indexOf('[[') < message.content.indexOf(']]')) return tweakSearch(message);
     if(!message.content.startsWith(process.env.CMDPREFIX) || message.author.bot) return;
     
     const args = message.content.slice(process.env.CMDPREFIX.length).split(/ +/);
