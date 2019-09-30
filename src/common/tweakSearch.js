@@ -1,4 +1,6 @@
-module.exports = (msg) => {
+const fetch = require('node-fetch')
+
+module.exports = async (msg) => {
     let name = msg.content.split('[[')[1].split(']]')[0]
     if(!name) return;
     let data = await fetch(`https://castyte-aptview.glitch.me/n/${encodeURIComponent(name)}`, {headers: {'X-Token': process.env.TWEAKSEARCHTOKEN}}).then(checkStatus)
@@ -50,4 +52,10 @@ module.exports = (msg) => {
     } else {
         msg.reply('tweak not found')
     }
+}
+
+function checkStatus(res) {
+  if (res.ok) { // res.status >= 200 && res.status < 300
+      return res;
+  }
 }
