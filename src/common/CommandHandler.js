@@ -26,10 +26,10 @@ module.exports.handleCMD = (bot, commandName, message, args) => {
 		|| bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
 	if (!command){
-		const xptimestamps = bot.cooldowns.get('_xp')
-		if(xptimestamps.has(message.author.id)) return;
+		if(bot.cooldowns.has(message.author.id)) return;
 		xp.do(message);
-		return setTimeout(() => xptimestamps.delete(message.author.id), 5000);
+		bot.cooldowns.set(message.author.id, true);
+		return setTimeout(() => bot.cooldowns.delete(message.author.id), 5000);
 	}
 
 	message.delete()
