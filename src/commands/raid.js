@@ -16,7 +16,7 @@ module.exports = {
         let raidmodechannel = message.guild.channels.find(c => c.name==='raid-mode')
         if(!raidmodechannel){
             message.guild.channels.forEach(channel => channel.edit({rateLimitPerUser: 21600}));
-            message.guild.createChannel({name: 'raid-mode',type: 'text', position: 0}).then(channel => {
+            message.guild.createChannel('raid-mode',{type: 'text', position: 0}).then(channel => {
                 channel.send(`The server has been set to raid mode by a moderator.\nAll channels have been set to slowmode.`)
                 message.guild.channels.get('606111745496318012').send(`\`\`\`yaml\nModerator: ${message.author.tag} (${message.author.id})\nAction: RAID MODE ENABLE\`\`\``)
                 message.guild.channels.get('606096323711729695').send('@everyone RAID MODE ENABLED')
