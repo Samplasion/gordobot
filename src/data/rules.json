@@ -1,0 +1,7 @@
+{
+    "0": {
+        "name": "Test rule",
+        "points": "10",
+        "punish": "mute10"
+    }
+}
