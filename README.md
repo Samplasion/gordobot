@@ -5,4 +5,4 @@ You cannot add the bot to your server as it is only meant to run on a single ser
 Only command contributions are likely to be accepted. Please refrain from adding new modules unless needed.  
 Submit PRs for one command/file at a time.
 ## Discord
-(discord.gg/3Xqqn4a)[https://discord.gg/3Xqqn4a]
+[discord.gg/3Xqqn4a](https://discord.gg/3Xqqn4a)
