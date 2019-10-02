@@ -3,6 +3,8 @@
  * See LICENCE file or <https://www.gnu.org/licenses/gpl-3.0.txt>
 */ 
 
+const ms = require('ms')
+
 module.exports = {
     name: 'mute',
     description: 'Mute a user',
