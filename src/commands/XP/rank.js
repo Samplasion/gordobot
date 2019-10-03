@@ -19,7 +19,7 @@ module.exports = {
         if(message.guild.members.get(args[0])) member = message.guild.members.get(args[0]).user
         else if(message.mentions.members.first()) member = message.mentions.members.first().user 
         else member = message.member.user
-        let xp = JSON.parse(fs.readFileSync(__dirname+'/../data/xp.json'))
+        let xp = JSON.parse(fs.readFileSync(__dirname+'/../../data/xp.json'))
         var usrlevel
         var usrxp
         var usrlevelpercent

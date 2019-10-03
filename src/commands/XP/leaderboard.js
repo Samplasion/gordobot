@@ -15,7 +15,7 @@ module.exports = {
   guildOnly: true,
 
   execute(message,args) {
-    let xp = JSON.parse(fs.readFileSync(__dirname+'/../data/xp.json'))
+    let xp = JSON.parse(fs.readFileSync(__dirname+'/../../data/xp.json'))
     var scores = []
     Object.keys(xp).forEach((val) => {
         scores.push({xp: xp[val].xp,level:xp[val].level,user:val})

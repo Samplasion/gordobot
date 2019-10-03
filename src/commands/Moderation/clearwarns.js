@@ -18,10 +18,10 @@ module.exports = {
         let member = message.mentions.members.first() || message.guild.members.get(args[0]);
         if(!member) return message.reply("Please mention a valid member of this server");
 
-        let warnings = JSON.parse(fs.readFileSync(__dirname+'/../data/warnings.json'))
+        let warnings = JSON.parse(fs.readFileSync(__dirname+'/../../data/warnings.json'))
         if(!warnings[member.user.id]) return message.reply('that user has 0 warnings')
         delete warnings[member.user.id]
-        fs.writeFileSync(__dirname+'/../data/warnings.json', JSON.stringify(warnings))
+        fs.writeFileSync(__dirname+'/../../data/warnings.json', JSON.stringify(warnings))
         message.reply(`warnings cleared for ${member.user.tag}`)
         message.guild.channels.get('606111745496318012').send(`\`\`\`yaml\nModerator: ${message.author.tag} (${message.author.id})\nTarget: ${member.user.tag} (${member.user.id})\nAction: CLEARWARNS\`\`\``)
     },

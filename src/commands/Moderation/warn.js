@@ -21,10 +21,10 @@ module.exports = {
             let reason = args.slice(1).join(' ');
             if(!reason) return message.reply('reason is required')
 
-            let warnings = JSON.parse(fs.readFileSync(__dirname+'/../data/warnings.json'))
+            let warnings = JSON.parse(fs.readFileSync(__dirname+'/../../data/warnings.json'))
             if(!warnings[member.user.id]) warnings[member.user.id] = []
             warnings[member.user.id].push({modid:message.author.id,reason:reason});
-            fs.writeFileSync(__dirname+'/../data/warnings.json', JSON.stringify(warnings))
+            fs.writeFileSync(__dirname+'/../../data/warnings.json', JSON.stringify(warnings))
             message.reply(`:white_check_mark: ${member.user.tag} warned with reason: ${reason}`)
             if(warnings[member.user.id].length==3) message.reply(`${member.user.tag} now has 3 warnings`)
             message.guild.channels.get('606111745496318012').send(`\`\`\`yaml\nModerator: ${message.author.tag} (${message.author.id})\nTarget: ${member.user.tag} (${member.user.id})\nAction: WARN\nReason: ${reason}\`\`\``)
