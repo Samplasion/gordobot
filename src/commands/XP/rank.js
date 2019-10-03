@@ -10,7 +10,7 @@ module.exports = {
     description: 'Show users/your rank',
     usage: '[@user]',
     cooldown: 10,
-    aliases: ['xp','stats'],
+    aliases: ['xp','stats','r'],
     access: 0,
     guildOnly: true,
   
