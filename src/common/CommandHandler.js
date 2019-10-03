@@ -10,14 +10,16 @@ const xp = require('./xp.js');
 module.exports.initCH = (bot, dir) => {
     bot.commands = new Discord.Collection();
 
-    const commandFiles = fs.readdirSync(__dirname+`/../${dir}`).filter(file => file.endsWith('.js'));
-
-    for (const file of commandFiles) {
-        const command = require(__dirname+`/../${dir}/${file}`);
-		bot.commands.set(command.name, command);
-		console.info(`Loaded command '${command.name}'`)
-    }
-
+	const cats = fs.readdirSync(__dirname+`/../${dir}`)
+	for(const cat of cats){
+		let cmdfiles = fs.readdirSync(__dirname+`/../${dir}/${cat}`).filter(f => f.endsWith('.js'))
+		for (const file of cmdfiles) {
+			const command = require(__dirname+`/../${dir}/${cat}/${file}`);
+			bot.commands.set(command.name, command);
+			console.info(`Loaded command '${command.name}'`)
+		}
+	
+	}
     bot.cooldowns = new Discord.Collection();
 }
 
