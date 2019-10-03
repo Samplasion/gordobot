@@ -16,7 +16,7 @@ module.exports = {
 
   execute(message,args) {
     let name = args[0].toLowerCase()
-    let tags = JSON.parse(fs.readFileSync(__dirname+'/../data/tags.json'))
+    let tags = JSON.parse(fs.readFileSync(__dirname+'/../../data/tags.json'))
     if(!tags[name]) return message.reply('tag not found')
     message.channel.send(tags[name])
   },

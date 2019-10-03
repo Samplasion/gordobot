@@ -16,10 +16,10 @@ module.exports = {
     if(!args[0] || !args[1]) return message.reply('name and text is required')
     let text = args.slice(1).join(' ');
     let name = args[0].toLowerCase()
-    let tags = JSON.parse(fs.readFileSync(__dirname+'/../data/tags.json'))
+    let tags = JSON.parse(fs.readFileSync(__dirname+'/../../data/tags.json'))
     if(tags[name]) return message.reply('that tag already exists')
     tags[name] = text;
-    fs.writeFileSync(__dirname+'/../data/tags.json', JSON.stringify(tags));
+    fs.writeFileSync(__dirname+'/../../data/tags.json', JSON.stringify(tags));
     message.reply(`tag ${args[0]} added`)
   },
 };

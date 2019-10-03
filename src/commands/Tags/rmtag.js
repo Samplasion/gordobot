@@ -17,10 +17,10 @@ module.exports = {
     execute(message,args) {
         if(!args[0]) return message.reply('name is required')
         let name = args[0].toLowerCase()
-        let tags = JSON.parse(fs.readFileSync(__dirname+'/../data/tags.json'))
+        let tags = JSON.parse(fs.readFileSync(__dirname+'/../../data/tags.json'))
         if(!tags[name]) return message.reply('tag not found')
         delete tags[name]
-        fs.writeFileSync(__dirname+'/../data/tags.json', JSON.stringify(tags));
+        fs.writeFileSync(__dirname+'/../../data/tags.json', JSON.stringify(tags));
         message.reply(`tag ${args[0]} removed`)
     },
   };

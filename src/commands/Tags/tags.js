@@ -15,7 +15,7 @@ module.exports = {
   guildOnly: true,
 
   execute(message,args) {
-    let tags = JSON.parse(fs.readFileSync(__dirname+'/../data/tags.json'))
+    let tags = JSON.parse(fs.readFileSync(__dirname+'/../../data/tags.json'))
     message.channel.send("__Available tags:__\n"+Object.keys(tags).join('\n'))
   },
 };
