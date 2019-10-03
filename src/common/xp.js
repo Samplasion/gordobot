@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 module.exports.do = (message) => {
     let xpchance = Math.floor(Math.random()*4)
     if(xpchance==2){
