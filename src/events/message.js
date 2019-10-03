@@ -14,7 +14,7 @@ module.exports = (bot,message) => {
         if(bot.cooldowns.has(message.author.id)) return;
 		xp.do(message);
 		bot.cooldowns.set(message.author.id, true);
-		return setTimeout(() => bot.cooldowns.delete(message.author.id), 5000);
+		return setTimeout(() => bot.cooldowns.delete(message.author.id,true), 5000);
     }
     
     const args = message.content.slice(process.env.CMDPREFIX.length).split(/ +/);
