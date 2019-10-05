@@ -9,6 +9,7 @@
   "author": "Castyte",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "captchagen": "^1.2.0",
     "discord.js": "^11.5.1",
     "dotenv": "^8.1.0",
     "ms": "^2.1.2",

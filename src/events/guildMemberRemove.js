@@ -6,7 +6,7 @@
 const fs = require('fs')
 
 module.exports = (bot,member) => {
-    let xp = JSON.parse(fs.readFileSync('./data/xp.json'))
+    let xp = JSON.parse(fs.readFileSync(__dirname+'/../data/xp.json'))
     delete xp[member.id]
-    fs.writeFileSync('./data/xp.json', JSON.stringify(xp));
+    fs.writeFileSync(__dirname+'/../data/xp.json', JSON.stringify(xp));
 }
