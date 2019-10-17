@@ -11,7 +11,7 @@ module.exports = {
     usage: '<@user> <time> [reason]',
     cooldown: 0,
     aliases: ['m'],
-    access: 1,
+    access: 99, //1,
     guildOnly: true,
   
     async execute(message,args) {
