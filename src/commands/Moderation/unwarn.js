@@ -11,7 +11,7 @@ module.exports = {
     usage: '<@user> <warn number>',
     cooldown: 0,
     aliases: ['rmwarn'],
-    access: 1,
+    access: 99, //1,
     guildOnly: true,
   
     execute(message,args) {

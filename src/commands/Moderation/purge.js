@@ -9,7 +9,7 @@ module.exports = {
     usage: '<count>',
     cooldown: 0,
     aliases: ['p'],
-    access: 1,
+    access: 99, //1,
     guildOnly: true,
   
     async execute(message,args) {

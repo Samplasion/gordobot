@@ -11,7 +11,7 @@ module.exports = {
     usage: '<@user>',
     cooldown: 0,
     aliases: ['warns'],
-    access: 1,
+    access: 99, //1,
     guildOnly: true,
   
     execute(message,args) {

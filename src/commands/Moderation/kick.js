@@ -9,7 +9,7 @@ module.exports = {
     usage: '<@user> [reason]',
     cooldown: 0,
     aliases: ['k'],
-    access: 1,
+    access: 99, //1,
     guildOnly: true,
   
     async execute(message,args) {
